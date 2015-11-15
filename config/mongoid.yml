@@ -135,3 +135,12 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      database: <%= ENV["DATABASE_NAME"] %>
+      hosts:
+        - <%= ENV["MONGOLAB_URI"] %>
+      options:
+  options:
