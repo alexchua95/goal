@@ -1,0 +1,54 @@
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.welcome-carousel {
+  height:500px;
+
+  .slick-slide {
+    height: 100%;
+    width: 100%;
+    background-size: cover !important;
+    margin: 0 auto;
+    &.welcome-carousel-slide-0 {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.80)), image-url('welcome-0') no-repeat center center;
+    }
+    &.welcome-carousel-slide-1 {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.80)), image-url('welcome-1') no-repeat center center;
+    }
+    &.welcome-carousel-slide-2 {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.80)), image-url('welcome-2') no-repeat center center;
+    }
+    h1 {
+      width: 100%;
+      text-align: center;
+      @include vertical-align();
+      margin: 0;
+      color: white;
+    }
+  }
+
+  .slick-slider{
+    height: 100%;
+  }
+
+  .slick-list,
+  .slick-track {
+    height: 100%;
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+}
+
+.container-fluid-top {
+  margin-top: -20px;
+}

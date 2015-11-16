@@ -56,14 +56,12 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <%= bootstrap_flash %>
-      <%= yield %>
-    </div>
-  </div>
-</div> <!-- /container -->
+<% if @full_width %>
+    <%= render 'layouts/full_width' %>
+<% else %>
+    <%= render 'layouts/container' %>
+<% end %>
+
 <footer class="footer">
   <div class="container">
     <p class="text-muted">&copy; NVD Group 10 2015</p>
