@@ -33,16 +33,16 @@ gem 'simple_form'
 gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
 
+# For user models
 gem 'devise'
 
 # Use Puma as the app server
 gem 'puma'
 
+gem 'jquery-slick-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
