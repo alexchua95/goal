@@ -66,4 +66,39 @@
     font-weight: 900;
     padding-bottom: 10px;
   }
+
+  .team-bio-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .team-bio-image-description {
+      position: absolute;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.50);
+      color: #fff;
+      opacity: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: opacity 500ms;
+      -moz-transition: opacity 500ms;
+      -o-transition: opacity 500ms;
+      transition: opacity 500ms;
+      padding: 20px;
+      span {
+        display: table;
+        width: 100%;
+        height: 100%;
+        span {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+    &:hover span.team-bio-image-description {
+      opacity: 1;
+    }
+  }
 }
