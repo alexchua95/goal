@@ -56,6 +56,21 @@
   margin-top: -20px;
 }
 
+label.image-select {
+  input {
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+  }
+  input + img {
+    cursor:pointer;
+    border:2px solid transparent;
+    height: 100px;
+  }
+  input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:2px solid #f00;
+  }
+}
+
 .team-bio {
   text-align: center;
   img {

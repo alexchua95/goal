@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
   root to: 'welcome#index'
 
+  resources :skills
+  resources :skill_types
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

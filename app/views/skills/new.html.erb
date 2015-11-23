@@ -1,0 +1,9 @@
+<%= simple_form_for(@skill) do |f| %>
+    <%= f.collection_radio_buttons(:skill_type, SkillType.all, :id, :name) do |b| %>
+        <% b.label(class: :'image-select') { b.radio_button + image_tag("team/byron.jpg")} %>
+    <% end %>
+    <%= f.input :level, as: :integer %>
+    <%= f.input :rate_min, as: :decimal %>
+    <%= f.input :rate_max, as: :decimal %>
+    <%= f.button :submit, 'Continue' %>
+<% end %>
