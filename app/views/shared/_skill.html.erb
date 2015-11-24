@@ -1,0 +1,7 @@
+<li>
+  <p><%= skill.user.first_name %></p>
+  <p><%= skill.skill_type.name %></p>
+  <p><%= skill.level_name %></p>
+  <p>$<%= skill.rate_min %> - $<%= skill.rate_max %> per hour</p>
+  <%= link_to 'Request', new_skill_request_path(skill_id: skill.id) %>
+</li>

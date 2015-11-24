@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: :registrations, omniauth_callbacks: 'users/omniauth_callbacks' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   root to: 'welcome#index'
 
-  resources :skills
+  resources :skills do
+    resources :requests
+  end
   resources :skill_types
 
   # Example of regular route:
