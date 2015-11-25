@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+    <%= simple_form_for([@user, hour]) do |f| %>
+        <% @hours.each do |hour| %>
+            <%= render 'hour', hour: hour %>
+        <% end %>
+    <% end %>
+  </div>
+</div>

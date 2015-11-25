@@ -58,6 +58,8 @@
 
 <% if @full_width %>
     <%= render 'layouts/full_width' %>
+<% elsif @main_application %>
+    <%= render 'layouts/main_application' %>
 <% else %>
     <%= render 'layouts/container' %>
 <% end %>

@@ -134,3 +134,67 @@ label.image-select {
     }
   }
 }
+
+.table-vertical-center {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align : center;
+  -webkit-align-items : center;
+  -moz-box-align : center;
+  -ms-flex-align : center;
+  align-items : center;
+  -webkit-box-pack : center;
+  -moz-box-pack : center;
+  -ms-flex-pack : center;
+  -webkit-justify-content : center;
+  justify-content : flex-start;
+}
+
+img.skill-user-image {
+  border-radius: 50%;
+  border:1px solid #DADADA;
+}
+
+.skill {
+  h3, p {
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+  li {
+    a {
+      padding-right: 20px;
+      padding-left: 20px;
+      margin: 0px;
+    }
+  }
+  .active {
+    a, a:hover, a:focus {
+      color: #fff;
+      background-color: #428bca;
+    }
+  }
+}

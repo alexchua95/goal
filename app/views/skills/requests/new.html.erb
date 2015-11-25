@@ -1,6 +1,6 @@
 <%= simple_form_for([@skill, @request]) do |f| %>
     <%= f.input :rate, as: :float %>
-    <%= f.input :start_time, as: :datetime %>
-    <%= f.input :end_time, as: :datetime %>
+    <%= f.input :start_time, as: :date_time_picker %>
+    <%= f.input :end_time, as: :date_time_picker %>
     <%= f.button :submit, 'Request' %>
 <% end %>

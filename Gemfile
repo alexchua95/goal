@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Required for twitter-bootstrap-rails
 gem 'therubyracer'
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Simple Form
 gem 'simple_form'
@@ -42,6 +42,10 @@ gem 'puma'
 gem 'jquery-slick-rails'
 
 gem 'omniauth-facebook'
+
+#For date time picker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -5,13 +5,18 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   authenticated :user do
-    root to: 'dashboard#index', as: :authenticated_root
+    root to: 'skills#index', as: :authenticated_root
   end
   root to: 'welcome#index'
 
   resources :skills do
-    resources :requests
+    resources :requests, controller: 'skills/requests'
   end
+
+  resources :users do
+    resources :hours, controller: 'users/hours'
+  end
+  resources :requests
   resources :skill_types
 
   # Example of regular route:

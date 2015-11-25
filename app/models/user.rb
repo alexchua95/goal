@@ -41,6 +41,7 @@ class User
   field :uid,    type: String
   has_many :skills
   has_many :requests
+  embeds_many :hours
   validates_presence_of :first_name, :last_name, :image
 
   def self.from_omniauth(auth)

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-lg-4">
+    <%= f.input :day, collection: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], prompt: 'Day of the week' %>
+  </div>
+  <div class="col-lg-3">
+    <%= f.input :start, as: :time_picker %>
+  </div>
+  <div class="col-lg-3">
+    <%= f.input :end, as: :time_picker %>
+  </div>
+</div>

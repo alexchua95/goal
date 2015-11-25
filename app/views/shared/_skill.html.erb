@@ -1,7 +1,18 @@
-<li>
-  <p><%= skill.user.first_name %></p>
-  <p><%= skill.skill_type.name %></p>
-  <p><%= skill.level_name %></p>
-  <p>$<%= skill.rate_min %> - $<%= skill.rate_max %> per hour</p>
-  <%= link_to 'Request', new_skill_request_path(skill_id: skill.id) %>
-</li>
+<tr class="skill">
+  <td>
+    <div class="row table-vertical-center">
+      <div class="col-lg-2">
+        <img class="skill-user-image" src="<%= skill.user.image %>">
+      </div>
+      <div class="col-lg-7">
+        <h3><%= skill.user.first_name %> <%= skill.user.last_name.first %>.</h3>
+        <p><%= skill.skill_type.name.titleize %></p>
+        <p><%= skill.level_name %></p>
+        <p>$<%= skill.rate_min %> - $<%= skill.rate_max %> per hour</p>
+      </div>
+      <div class="col-lg-3">
+        <%= link_to 'Request Session', new_skill_request_path(skill_id: skill.id), class: 'btn btn-default' %>
+      </div>
+    </div>
+  </td>
+</tr>
