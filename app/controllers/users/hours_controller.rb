@@ -1,4 +1,4 @@
-class Users::UsersController < ApplicationController
+class Users::HoursController < ApplicationController
 
   def create
 
