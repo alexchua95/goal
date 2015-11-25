@@ -21,11 +21,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Required for twitter-bootstrap-rails
-gem 'therubyracer'
-gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem 'bootstrap-sass', '~> 3.3.6'
-
 # Simple Form
 gem 'simple_form'
 
@@ -38,14 +33,10 @@ gem 'devise'
 
 # Use Puma as the app server
 gem 'puma'
-
-gem 'jquery-slick-rails'
-
 gem 'omniauth-facebook'
 
-#For date time picker
-gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+# Bower to manage front end dependencies
+gem 'bower-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

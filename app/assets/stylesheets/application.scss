@@ -10,14 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require slick
- *= require slick-theme
  *= require_self
  *= require_tree .
  */
 
 @import "bootstrap-overrides-variables";
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import 'bootstrap-datetimepicker';
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap-datetimepicker.min.css";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 @import "custom";

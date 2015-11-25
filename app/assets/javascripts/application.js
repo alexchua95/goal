@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require turbolinks
-//= require jquery.slick
+//= require slick-carousel/slick/slick.min.js
 //= require moment
-//= require bootstrap-datetimepicker
+//= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
 //= require_tree .

@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_layout
 
   def set_layout
-    @main_application = true
+
   end
 end
