@@ -5,11 +5,8 @@ class Users::HoursController < ApplicationController
     @hour = @user.hours.new(hour_params)
     respond_to do |format|
       if @hour.save
-        format.html { redirect_to @hour, notice: 'User was successfully created.' }
-        format.js   {}
         format.json { render 'create', status: :created }
       else
-        format.html { render action: "new" }
         format.json { render json: @hour.errors, status: :unprocessable_entity }
       end
     end
@@ -19,11 +16,20 @@ class Users::HoursController < ApplicationController
     @hour = User.find(params[:user_id]).hours.find(params[:id])
     respond_to do |format|
       if @hour.update(hour_params)
-        format.html { redirect_to @hour, notice: 'User was successfully created.' }
-        format.js   {}
         format.json { render 'update', status: :created }
       else
-        format.html { render action: "new" }
+        format.json { render json: @hour.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @hour = User.find(params[:user_id]).hours.find(params[:id])
+    respond_to do |format|
+      if @hour.destroy
+        format.json { head :no_content }
+        format.js { render layout: false }
+      else
         format.json { render json: @hour.errors, status: :unprocessable_entity }
       end
     end

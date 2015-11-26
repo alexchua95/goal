@@ -9,8 +9,17 @@
       <div class="col-lg-3">
         <%= f.input :close_time, as: :time_picker, 'hour-id': hour.id %>
       </div>
-      <% if not hour.persisted? %>
-          <%= f.button :submit %>
-      <% end %>
+      <div class="col-lg-2">
+        <label>
+          Action
+        </label>
+        <div>
+          <% if hour.persisted? %>
+              <%= link_to 'Delete', [@user, hour], method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'btn btn-danger delete-hour', 'hour-id': hour.id %>
+          <% else %>
+              <%= f.button :submit, 'Add', class: 'btn btn-success' %>
+          <% end %>
+        </div>
+      </div>
     </div>
 <% end %>
