@@ -1,0 +1,29 @@
+<div class="row">
+  <table class="table table-bordered">
+    <tr>
+      <% Hour.days.each do |day| %>
+        <th>
+          <%= day %>
+        </th>
+      <% end %>
+    </tr>
+    <tr>
+      <% (0..6).to_a.each do |day| %>
+      <td class="col-lg-1">
+        <ul>
+          <% @user.hours.where(day: day).each do |hour| %>
+            <li>
+              <%= hour.open_time %> - <%= hour.close_time %>
+            </li>
+          <% end %>
+        </ul>
+      </td>
+      <% end %>
+    </tr>
+  </table>
+  <div class="col-lg-12 col-md-12 hours">
+    <% @hours.each do |hour| %>
+        <%= render 'shared/hour_form', hour: hour %>
+    <% end %>
+  </div>
+</div>

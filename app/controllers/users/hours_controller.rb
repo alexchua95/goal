@@ -27,8 +27,7 @@ class Users::HoursController < ApplicationController
     @hour = User.find(params[:user_id]).hours.find(params[:id])
     respond_to do |format|
       if @hour.destroy
-        format.json { head :no_content }
-        format.js { render layout: false }
+        format.js { }
       else
         format.json { render json: @hour.errors, status: :unprocessable_entity }
       end

@@ -14,7 +14,7 @@
           <%= link_to 'Requests', requests_path, class: 'h3' %>
         </li>
         <li class="<%= 'active' if current_page?(requests_path) %>">
-          <%= link_to 'My Profile', edit_user_path(current_user), class: 'h3' %>
+          <%= link_to 'My Profile', user_path(current_user), class: 'h3' %>
         </li>
       </ul>
     </div>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  def edit
+  def show
     @user = User.find(params[:id])
     @hours = @user.hours + [Hour.new]
   end

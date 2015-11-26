@@ -40,4 +40,8 @@ class Hour
     errors.add(:close, "should be less than total") if close > open
   end
 
+  def self.days
+    ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  end
+
 end
