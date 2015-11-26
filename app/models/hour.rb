@@ -33,7 +33,7 @@ class Hour
     hours = number / 60
     minutes = number % 60
     time = DateTime.parse("#{hours}:#{minutes}")
-    time.strftime('%I:%M %p')
+    time.strftime('%l:%M %p')
   end
 
   def open_less_than_close

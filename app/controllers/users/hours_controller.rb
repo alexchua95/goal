@@ -1,11 +1,11 @@
 class Users::HoursController < ApplicationController
 
   def create
-    @user = User.find(params[:user_id])
-    @hour = @user.hours.new(hour_params)
+    @hour = User.find(params[:user_id]).hours.new(hour_params)
     respond_to do |format|
       if @hour.save
-        format.json { render 'create', status: :created }
+        @user = User.find(params[:user_id])
+        format.json { render 'shared/user', status: :created }
       else
         format.json { render json: @hour.errors, status: :unprocessable_entity }
       end
@@ -16,7 +16,8 @@ class Users::HoursController < ApplicationController
     @hour = User.find(params[:user_id]).hours.find(params[:id])
     respond_to do |format|
       if @hour.update(hour_params)
-        format.json { render 'update', status: :created }
+        @user = User.find(params[:user_id])
+        format.json { render 'shared/user', status: :ok }
       else
         format.json { render json: @hour.errors, status: :unprocessable_entity }
       end
@@ -24,9 +25,10 @@ class Users::HoursController < ApplicationController
   end
 
   def destroy
-    @hour = User.find(params[:user_id]).hours.find(params[:id])
+    @hour =  User.find(params[:user_id]).hours.find(params[:id])
     respond_to do |format|
       if @hour.destroy
+        @user = User.find(params[:user_id])
         format.js { }
       else
         format.json { render json: @hour.errors, status: :unprocessable_entity }

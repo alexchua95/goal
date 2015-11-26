@@ -1,1 +1,3 @@
-$('#edit_hour_' + "<%= @hour.id %>").remove();
+$('.profile').remove();
+$("<%= escape_javascript(render 'users/profile', user: @user) %>").appendTo(".user");
+show();
