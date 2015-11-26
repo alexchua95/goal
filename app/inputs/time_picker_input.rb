@@ -1,6 +1,6 @@
 class TimePickerInput < SimpleForm::Inputs::Base
-  def input
-    template.content_tag(:div, class: 'input-group date form_time') do
+  def input(wrapper_options)
+    template.content_tag(:div, { class: 'input-group date form_time' }.reverse_merge!(options)) do
       template.concat @builder.text_field(attribute_name, input_html_options)
       template.concat span_calendar
     end

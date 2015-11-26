@@ -1,0 +1,36 @@
+function ready() {
+
+    var timeForm = $('.form_time')
+
+    $( "#hour_day" ).change( function() {
+        var hourId = $(this).attr('hour-id')
+        $('#edit_hour_' + hourId).submit()
+    });
+
+    timeForm.datetimepicker({
+        format: 'LT',
+        stepping: 30
+    });
+
+    timeForm.on("dp.change", function (event) {
+        var el = $(event.target);
+        var hourId = el.attr('hour-id')
+        $('#edit_hour_' + hourId).submit()
+    });
+
+    var bindingFunction = function(event, data, status, xhr) {
+        $('.new_hour').addClass('edit_hour');
+        $('.new_hour').removeClass('new_hour').attr("id","edit_hour_" + data.id);
+        console.log(data)
+        $(data.partial).appendTo(".hours");
+        $('.form_time').datetimepicker({
+            format: 'LT',
+            stepping: 30
+        });
+        $(".new_hour").bind("ajax:success", bindingFunction);
+    }
+
+    $(".new_hour").bind("ajax:success", bindingFunction);
+}
+
+$(document).on('page:change', ready)
