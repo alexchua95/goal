@@ -4,6 +4,13 @@ class SkillTypesController < ApplicationController
     @skill_type = SkillType.new
   end
 
+  def index
+    respond_to do |format|
+      @skill_types = SkillType.all
+      format.json { render 'shared/skill_types', status: :created }
+    end
+  end
+
   def create
     @skill_type = SkillType.new(skill_type_params)
     @skill_type.save

@@ -4,16 +4,21 @@ class Skill
   belongs_to :skill_type
   belongs_to :user
   field :level, type: Integer
-  field :rate_min, type: Float
-  field :rate_max, type: Float
+  field :rate, type: Float
 
-  def level_name
-    if self.level == 0
-      return "Noob"
-    elsif self.level == 1
-      return "Getting Better"
-    else
-      return "Expert"
+  def self.levels
+    ['Noob', 'Getting Better', 'Expert']
+  end
+
+  def skill_type_name
+    skill_type.name if skill_type
+  end
+
+  def self.level_tuples
+    result = []
+    self.levels.each_with_index do |level, index|
+      result << [level, index]
     end
+    result
   end
 end

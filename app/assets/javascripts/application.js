@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require turbolinks
 //= require slick-carousel/slick/slick.min.js
 //= require moment
 //= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
+//= require bootstrap3-typeahead/bootstrap3-typeahead.min.js

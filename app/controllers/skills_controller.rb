@@ -2,7 +2,7 @@ class SkillsController < ApplicationController
 
   def new
     @skill_types = SkillType.all
-    @skill = Skill.new
+    @skill = Skill.includes(:skill_type).new
   end
 
   def create

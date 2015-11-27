@@ -8,6 +8,7 @@ Rails.application.config.assets.precompile << %r(slick-carousel/slick/fonts/[\w-
 controllers = ApplicationController.descendants
 
 Rails.application.config.assets.precompile += ['users/show.js']
+Rails.application.config.assets.precompile += ['skills/new.js']
 Rails.application.config.assets.precompile += ['welcome/index.js']
 
 # Add additional assets to the asset load path

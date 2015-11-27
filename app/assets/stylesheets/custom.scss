@@ -56,19 +56,24 @@
   margin-top: -20px;
 }
 
-label.image-select {
+div.image-select {
+
+  label {
+    width: 100%;
+  }
+
   input {
     visibility: hidden; /* Makes input not-clickable */
     position: absolute; /* Remove input from document flow */
   }
   input + div {
     cursor:pointer;
-    border:1px solid black;
     height: 100px;
-    width: 100px;
+    width: 100%;
     text-align: center;
     display: table;
     div {
+      width: 100%;
       display: table-cell;
       vertical-align: middle;
       img {
@@ -82,7 +87,8 @@ label.image-select {
   }
   
   input:checked + div { /* (RADIO CHECKED) IMAGE STYLES */
-    border:1px solid #f00;
+    background-color: #CCCCCC;
+
   }
 }
 
@@ -167,7 +173,7 @@ img.skill-user-image {
 
 .sidebar {
   position: fixed;
-  top: 51px;
+  top: $navbar-height;
   bottom: 0;
   right: 0;
   z-index: 1000;
@@ -196,6 +202,35 @@ img.skill-user-image {
       color: #fff;
       background-color: #428bca;
     }
+  }
+}
+
+.no-border {
+
+
+
+}
+
+#skill_skill_type_name {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: 1px, solid, #DADADA !important;
+  border-radius: 0px;
+  text-align: center;
+  font-size: $font-size-h1;
+  height: $font-size-h1*2;
+}
+
+.skill_skill_type_name {
+  .dropdown-menu {
+    width: 100%;
+    text-align: center;
+    font-size: $font-size-h1;
   }
 }
 

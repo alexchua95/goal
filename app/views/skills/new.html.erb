@@ -1,19 +1,25 @@
 <%= simple_form_for(@skill) do |f| %>
-    <%= f.collection_radio_buttons(:skill_type_id, SkillType.all, :id, :name, options: {collection_wrapper_tag: :div}) do |b| %>
-        <% b.label(class: :'image-select') do |l| %>
-            <%= b.radio_button %>
-            <div>
+    <%= f.input :skill_type_name, input_html: { placeholder: 'What is your skill?' }, label: false %>
+    <%= f.input :skill_type, as: :hidden %>
+    <div class="row">
+      <%= f.collection_radio_buttons(:level, Skill.level_tuples, :last, :first, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-4 image-select') do |b| %>
+          <% b.label do |l| %>
+              <%= b.radio_button %>
               <div>
-                <% image_tag("skill_types/#{b.text}.png")%>
-                <p>
-                  <%= b.text %>
-                </p>
+                <div>
+                  <% image_tag("skill_types/#{b.text}.png")%>
+                  <p>
+                    <%= b.text %>
+                  </p>
+                </div>
               </div>
-            </div>
-        <% end %>
-    <% end %>
-    <%= f.input :level, as: :integer %>
-    <%= f.input :rate_min, as: :decimal %>
-    <%= f.input :rate_max, as: :decimal %>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <%= f.input :rate, as: :price, input_html: { placeholder: 'Hourly Price' } %>
+      </div>
+    </div>
     <%= f.button :submit, 'Continue' %>
 <% end %>

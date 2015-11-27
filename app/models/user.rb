@@ -37,6 +37,7 @@ class User
   field :first_name, type: String
   field :last_name, type: String
   field :image,    type: String
+  field :biography, type: String
   field :provider,    type: String
   field :uid,    type: String
   has_many :skills
