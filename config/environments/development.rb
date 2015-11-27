@@ -38,4 +38,7 @@ Rails.application.configure do
 
   # Defines default url options, required by Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  ENV['FACEBOOK_KEY'] = '1070295626337515'
+  ENV['FACEBOOK_SECRET'] = 'ccf7d1a31233bd5188c522733e2b95e2'
 end
