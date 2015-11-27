@@ -11,6 +11,9 @@
  * file per style scope.
  *
  *= require_self
+ *= require eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min
+ *= require slick-carousel/slick/slick
+ *= require slick-carousel/slick/slick-theme
  *= require_tree .
  */
 
@@ -18,7 +21,4 @@
 $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
-@import "eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css";
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
 @import "custom";
