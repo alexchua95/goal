@@ -1,4 +1,4 @@
-class Skill
+class Location
   include Mongoid::Document
   embedded_in :user
   field :longitude, type: Float
