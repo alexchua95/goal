@@ -42,16 +42,20 @@ class User
   has_many :skills
   has_many :requests
   embeds_many :hours
-  validates_presence_of :first_name, :last_name, :image
+  embeds_one :location
+  validates_presence_of :first_name, :last_name, :email, :password
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      binding.pry
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.image = auth.info.image # assuming the user model has an image
     end
+  end
+
+  def name
+    [first_name, last_name].join(' ')
   end
 end

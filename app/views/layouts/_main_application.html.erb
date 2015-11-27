@@ -1,4 +1,4 @@
-<div class="container-fluid container-fluid-top">
+<div class="container-fluid">
   <div class="row">
     <div class="col-lg-2">
     </div>
@@ -13,7 +13,7 @@
         <li class="<%= 'active' if current_page?(requests_path) %>">
           <%= link_to 'Requests', requests_path, class: 'h3' %>
         </li>
-        <li class="<%= 'active' if current_page?(requests_path) %>">
+        <li class="<%= 'active' if current_page?(user_path(current_user)) %>">
           <%= link_to 'My Profile', user_path(current_user), class: 'h3' %>
         </li>
       </ul>

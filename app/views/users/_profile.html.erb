@@ -1,26 +1,29 @@
 <div class="row profile">
-  <table class="table table-bordered">
-    <tr>
-      <% Hour.days.each do |day| %>
-          <th>
-            <%= day %>
-          </th>
+  <div class="row">
+    <div class="col-lg-6">
+      <img src="<%= user.image %>" class="img-circle">
+      <h1><%= user.name %></h1>
+    </div>
+    <div class="col-lg-6">
+      <div id="map"></div>
+      <% if user.location %>
+          <%= hidden_field :user, :latitude, value: user.location.latitude %>
+          <%= hidden_field :user, :longitude, value: user.location.longitude %>
       <% end %>
-    </tr>
-    <tr>
-      <% (0..6).to_a.each do |day| %>
-          <td class="col-lg-1">
-            <ul>
-              <% user.hours.where(day: day).each do |hour| %>
-                  <li>
-                    <%= hour.open_time %> - <%= hour.close_time %>
-                  </li>
-              <% end %>
-            </ul>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <tbody>
+    <% user.skills.each do |skill|%>
+        <tr>
+          <td>
+            <%= render 'users/skill.html.erb', skill: skill %>
           </td>
-      <% end %>
-    </tr>
+        </tr>
+    <% end %>
+    </tbody>
   </table>
+  <%= render 'shared/availability.html.erb', user: user %>
   <div class="col-lg-12 col-md-12 hours">
     <% (user.hours + [Hour.new]).each do |hour| %>
         <%= render 'shared/hour_form.html.erb', hour: hour %>

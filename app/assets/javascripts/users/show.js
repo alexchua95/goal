@@ -1,6 +1,7 @@
 function show() {
 
     function init() {
+
         $('.form_time')
             .datetimepicker({
                 format: 'LT',
@@ -15,6 +16,21 @@ function show() {
             var hourId = $(this).attr('hour-id')
             $('#edit_hour_' + hourId).submit()
         });
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 15
+        });
+
+        var marker = new google.maps.Marker({
+            position: {lat: -34.397, lng: 150.644},
+            map: map,
+            title: 'Restaurant Location'
+        });
+        //var latitude = $('.user-latitude').val()
+        //var longitude = $('.user-longitude').val()
+        //map.setCenter(new google.maps.LatLng(latitude, longitude));
+        //marker.setPosition(new google.maps.LatLng(latitude, longitude));
     }
 
     init();

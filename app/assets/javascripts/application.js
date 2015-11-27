@@ -17,4 +17,3 @@
 //= require slick-carousel/slick/slick.min.js
 //= require moment
 //= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
-//= require_tree .
