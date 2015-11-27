@@ -16,6 +16,7 @@ function skillsNew() {
             };
             $("#skill_skill_type_name").typeahead({
                 source: function (query, process) {
+                    console.log("hey")
                     process(getMatches(data.skill_types, query))
                 },
                 displayText: function(item) {
