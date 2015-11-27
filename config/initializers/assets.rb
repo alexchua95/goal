@@ -3,6 +3,7 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
+Rails.application.config.assets.precompile << %r(slick-carousel/slick/fonts/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
 
 controllers = ApplicationController.descendants
 
