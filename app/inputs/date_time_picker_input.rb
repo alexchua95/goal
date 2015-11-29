@@ -7,7 +7,7 @@ class DateTimePickerInput < SimpleForm::Inputs::Base
   end
 
   def input_html_options
-    super.merge({class: 'form-control'})
+    super.merge({class: 'form-control input-lg'})
   end
 
   def span_calendar

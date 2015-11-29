@@ -1,9 +1,8 @@
-class PriceInput < SimpleForm::Inputs::Base
+class LocationInput < SimpleForm::Inputs::Base
   def input(wrapper_options)
     template.content_tag(:div, class: 'input-group') do
-      template.concat span_dollar
+      template.concat span_location
       template.concat @builder.text_field(attribute_name, input_html_options)
-      template.concat span_per_hour
     end
   end
 
@@ -11,15 +10,9 @@ class PriceInput < SimpleForm::Inputs::Base
     super.merge({class: 'form-control input-lg'})
   end
 
-  def span_dollar
+  def span_location
     template.content_tag(:span, class: 'input-group-addon') do
-      template.concat '$'
-    end
-  end
-
-  def span_per_hour
-    template.content_tag(:span, class: 'input-group-addon') do
-      template.concat 'per hour'
+      template.concat '<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>'.html_safe
     end
   end
 

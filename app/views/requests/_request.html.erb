@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-12 table-vertical-center">
+    <%= link_to "<img class=\"profile-image\" src=\"#{request.user.image}\">".html_safe, user_path(request.user) %>
+    <div class="col-lg-6">
+      <h3><%= request.skill.skill_type.name.titleize %></h3>
+      <p>Session with <%= link_to request.skill.user.name, user_path(request.skill.user) %></p>
+      <p><%= request.formatted_start_time %></p>
+      <p>You requested: $<%= request.rate %>/hour for <%= request.length %> hours</p>
+      <p>Status: <%= request.status %></p>
+    </div>
+    <div class="col-lg-6">
+      <%= link_to 'Cancel', request_cancel_path(request), method: :delete, remote: true, class: 'btn btn-danger btn-lg pull-right' %>
+    </div>
+  </div>
+</div>

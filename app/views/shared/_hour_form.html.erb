@@ -11,9 +11,9 @@
       </div>
       <div class="col-lg-2">
         <% if hour.persisted? %>
-            <%= link_to 'Delete', [@user, hour], method: :delete, remote: true, class: 'btn btn-danger delete-hour', 'hour-id': hour.id %>
+            <%= link_to 'Delete', [@user, hour], method: :delete, remote: true, class: 'btn btn-danger delete-hour full-width', 'hour-id': hour.id %>
         <% else %>
-            <%= f.button :submit, 'Add', class: 'btn btn-success' %>
+            <%= f.button :submit, 'Add', class: 'btn btn-success full-width' %>
         <% end %>
       </div>
     </div>

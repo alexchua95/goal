@@ -1,0 +1,24 @@
+<div class="my-requests">
+  <h3>My Requests</h3>
+  <table class="table">
+    <% requests.each do |request| %>
+        <tr>
+          <td>
+            <%= render 'request', request: request %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+  <h3>Incoming Requests</h3>
+  <table class="table">
+    <% skills.each do |skill| %>
+        <% skill.requests.each do |request| %>
+            <tr>
+              <td>
+                <%= render 'skill_request', request: request %>
+              </td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+</div>

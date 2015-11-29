@@ -15,8 +15,13 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :hours, controller: 'users/hours'
+    resources :locations, controller: 'users/locations'
   end
-  resources :requests
+  resources :requests do
+    delete :cancel
+    patch :accept
+    delete :decline
+  end
   resources :skill_types
 
   # Example of regular route:

@@ -1,17 +1,17 @@
 <tr class="skill">
   <td>
-    <div class="row table-vertical-center">
-      <div class="col-lg-2">
-        <img class="skill-user-image" src="<%= skill.user.image %>">
-      </div>
-      <div class="col-lg-7">
-        <h3><%= skill.user.first_name %> <%= skill.user.last_name.first %>.</h3>
-        <p><%= skill.skill_type.name.titleize %></p>
-        <p><%= skill.level_name %></p>
-        <p>$<%= skill.rate_min %> - $<%= skill.rate_max %> per hour</p>
-      </div>
-      <div class="col-lg-3">
-        <%= link_to 'Request Session', new_skill_request_path(skill_id: skill.id), class: 'btn btn-default' %>
+    <div class="row">
+      <div class="col-lg-12 table-vertical-center">
+        <%= link_to "<img class=\"profile-image\" src=\"#{skill.user.image}\">".html_safe, user_path(skill.user) %>
+        <div class="col-lg-6">
+          <h3><%= skill.skill_type.name.titleize %></h3>
+          <p><%= link_to skill.user.name, user_path(skill.user) %></p>
+          <p><%= skill.level_name %></p>
+          <p>$<%= skill.rate %> per hour</p>
+        </div>
+        <div class="col-lg-6">
+          <%= link_to 'Request Session', new_skill_request_path(skill_id: skill.id), class: 'btn btn-lg btn-success pull-right' %>
+        </div>
       </div>
     </div>
   </td>

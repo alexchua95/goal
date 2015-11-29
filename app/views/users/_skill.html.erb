@@ -1,10 +1,7 @@
 <div class="row table-vertical-center">
-  <div class="col-lg-9">
+  <div class="col-lg-12">
     <h3><%= skill.skill_type.name.titleize %></h3>
-    <p><%= skill.level_name %></p>
-    <p>$<%= skill.rate_min %> - $<%= skill.rate_max %> per hour</p>
-  </div>
-  <div class="col-lg-3">
-    <%= link_to 'Request Session', new_skill_request_path(skill_id: skill.id), class: 'btn btn-default' %>
+    <p class="h4"><%= skill.level_name %></p>
+    <p class="h4">$<%= skill.rate %> per hour</p>
   </div>
 </div>

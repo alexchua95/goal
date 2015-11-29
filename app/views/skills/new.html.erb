@@ -11,27 +11,24 @@
   <% end %>
 </div>
 <%= simple_form_for(@skill) do |f| %>
-    <%= f.input :skill_type_name, input_html: { placeholder: 'What is your skill?' }, label: false %>
-    <%= f.input :skill_type, as: :hidden %>
+    <%= f.input :skill_type_name, input_html: { placeholder: 'What is your skill?' }, label: false, hint: '' %>
+    <%= f.input :skill_type_id, as: :hidden %>
     <div class="row">
-      <%= f.collection_radio_buttons(:level, Skill.level_tuples, :last, :first, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-4 image-select') do |b| %>
+      <%= f.collection_radio_buttons(:level, Skill.level_tuples, :last, :first, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-4 level-select') do |b| %>
           <% b.label do |l| %>
               <%= b.radio_button %>
               <div>
                 <div>
-                  <% image_tag("skill_types/#{b.text}.png")%>
-                  <p>
                     <%= b.text %>
-                  </p>
                 </div>
               </div>
           <% end %>
       <% end %>
     </div>
     <div class="row">
-      <div class="col-lg-3">
-        <%= f.input :rate, as: :price, input_html: { placeholder: 'Hourly Price' } %>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <%= f.input :rate, as: :price, label: false, input_html: { placeholder: 'Hourly Rate' }, hint: '' %>
       </div>
     </div>
-    <%= f.button :submit, 'Continue' %>
+    <%= f.button :submit, 'Done', class: 'btn btn-lg btn-success' %>
 <% end %>

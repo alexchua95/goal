@@ -1,7 +1,28 @@
-<%= simple_form_for([@skill, @request]) do |f| %>
-    <%= f.input :rate, as: :float %>
-    <%= f.input :start_time, as: :date_time_picker %>
-    <%= f.input :end_time, as: :date_time_picker %>
-    <%= f.button :submit, 'Request' %>
-<% end %>
-<%= render 'shared/availability.html.erb', user: @skill.user %>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="row">
+      <div class="col-lg-12">
+        <%= render 'users/details.html.erb', user: @skill.user %>
+      </div>
+      <hr>
+      <div class="col-lg-12">
+        <%= render 'users/skill.html.erb', skill: @skill %>
+      </div>
+      <hr>
+      <div class="col-lg-12">
+        <h3>Availability</h3>
+        <%= render 'shared/availability.html.erb', user: @skill.user %>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <%= simple_form_for([@skill, @request]) do |f| %>
+        <%= f.input :skill_id, as: :hidden %>
+        <%= f.input :start_time, as: :date_time_picker, label: 'When do you want to meet?', label_html: { class: 'h3' } %>
+        <%= f.input :length, as: :duration, label: false, input_html: { placeholder: 'How long?', hint: '' }%>
+        <%= f.input :rate, as: :price, label: false, input_html: { placeholder: 'Hourly Rate' }, hint: '' %>
+        <%= f.button :submit, 'Request', class: 'btn btn-lg btn-success full-width' %>
+    <% end %>
+  </div>
+</div>
+

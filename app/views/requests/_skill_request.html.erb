@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-lg-12 table-vertical-center">
+    <%= link_to "<img class=\"profile-image\" src=\"#{request.user.image}\">".html_safe, user_path(request.user) %>
+    <div class="col-lg-6">
+      <h3><%= request.skill.skill_type.name.titleize %></h3>
+      <p><%= link_to request.user.name, user_path(request.skill.user) %></p>
+      <p><%= request.formatted_start_time %></p>
+      <p>Requested $<%= request.rate %>/hour for <%= request.length %> hours</p>
+    </div>
+    <div class="col-lg-6">
+      <% if request.pending? %>
+          <%= link_to 'Accept', request_accept_path(request), method: :patch, remote: true, class: 'btn btn-lg btn-success pull-right' %>
+          <%= link_to 'Decline', request_decline_path(request), method: :delete, remote: true, class: 'btn btn-lg btn-danger pull-right' %>
+      <% else %>
+          <p class="pull-right h3">You have <%= request.status %> this session.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

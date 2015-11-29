@@ -1,0 +1,5 @@
+<img src="<%= user.image %>" class="profile-image">
+<h2><%= user.name %></h2>
+<% if user.location %>
+    <h3><%= user.location.address %></h3>
+<% end %>

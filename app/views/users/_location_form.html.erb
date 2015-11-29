@@ -1,0 +1,8 @@
+<%= simple_form_for [@user, location], remote: true, html: { 'data-type': :json } do |f| %>
+    <%= f.input :address, as: :location, label: false, input_html: { placeholder: 'What is your region, city or address?'} %>
+    <%= f.input :latitude, as: :hidden %>
+    <%= f.input :longitude, as: :hidden %>
+    <div id="map"></div>
+<% end %>
+
+

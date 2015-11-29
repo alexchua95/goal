@@ -1,0 +1,2 @@
+$('.my-requests').remove();
+$("<%= escape_javascript(render 'requests/requests', requests: @requests, skills: @skills)%>").appendTo(".requests");

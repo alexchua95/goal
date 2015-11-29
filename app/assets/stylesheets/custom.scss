@@ -56,7 +56,7 @@
   margin-top: -20px;
 }
 
-div.image-select {
+div.level-select {
 
   label {
     width: 100%;
@@ -68,6 +68,9 @@ div.image-select {
   }
   input + div {
     cursor:pointer;
+    font-size: $font-size-h4;
+    border-radius: 10px;
+    border:1px solid #DADADA;
     height: 100px;
     width: 100%;
     text-align: center;
@@ -76,13 +79,6 @@ div.image-select {
       width: 100%;
       display: table-cell;
       vertical-align: middle;
-      img {
-        height: 32px;
-        width: 32px;
-      }
-      p {
-        margin-bottom: 0px;
-      }
     }
   }
   
@@ -280,4 +276,12 @@ img.skill-user-image {
 }
 .slick-next {
   color: red;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
 }

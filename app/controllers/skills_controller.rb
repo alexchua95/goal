@@ -7,8 +7,12 @@ class SkillsController < ApplicationController
 
   def create
     @skill = current_user.skills.new(skill_params)
-    @skill.save
-    redirect_to root_path
+    if @skill.save
+      redirect_to user_path(current_user)
+    else
+
+    end
+
   end
 
   def index
@@ -16,7 +20,7 @@ class SkillsController < ApplicationController
   end
 
   def skill_params
-    params.require(:skill).permit(:skill_type_id, :level, :rate_min, :rate_max)
+    params.require(:skill).permit(:skill_type_id, :level, :rate)
   end
 
 end
