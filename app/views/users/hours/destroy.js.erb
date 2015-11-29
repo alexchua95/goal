@@ -1,3 +1,5 @@
 $('.profile').remove();
 $("<%= escape_javascript(render 'users/profile', user: @user) %>").appendTo(".user");
-show();
+usersShow().init();
+$(".edit_hour").bind("ajax:success", bindingFunction);
+$(".new_hour").bind("ajax:success", bindingFunction);

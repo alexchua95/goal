@@ -12,12 +12,13 @@
  *
  *= require_self
  *= require eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min
- *= require slick-carousel/slick/slick
- *= require slick-carousel/slick/slick-theme
+
  */
 
 @import "bootstrap-overrides-variables";
 $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "slick-carousel/slick/slick.scss";
+@import "slick-carousel/slick/slick-theme.scss";
 @import "custom";

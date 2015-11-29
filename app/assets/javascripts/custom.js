@@ -6,6 +6,32 @@ function welcomeIndex() {
 }
 
 function skillsNew() {
+    $('.skill-types-carousel').slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    });
+
+    function setSkill(name, id) {
+        $('#skill_skill_type_name').val(name);
+        $('#skill_skill_type').val(id);
+        var index = _.indexOf(_.pluck(skillTypes,'id'), id);
+        $('.skill-types-carousel').slick('slickGoTo', index, false);
+
+    }
+
+    $('.skill-types-select').on("click", function (event) {
+        var el = $(event.currentTarget);
+        var skillTypeId = el.attr('skill-type-id');
+        var skillTypeName = el.attr('skill-type-name');
+        console.log(event)
+        console.log(skillTypeName)
+        setSkill(skillTypeName, skillTypeId);
+    });
+
+    var skillTypes = []
+
     $.ajax({
         url: "/skill_types",
         beforeSend: function( xhr ) {
@@ -13,6 +39,7 @@ function skillsNew() {
         }
     })
         .done(function( data ) {
+            skillTypes = data.skill_types
             var getMatches = function(skill_types, substring) {
                 var matches = _.filter(
                     skill_types,
@@ -22,13 +49,13 @@ function skillsNew() {
             };
             $("#skill_skill_type_name").typeahead({
                 source: function (query, process) {
-                    process(getMatches(data.skill_types, query))
+                    process(getMatches(skillTypes, query))
                 },
                 displayText: function(item) {
                     return item.name
                 },
                 updater: function (item) {
-                    $("#skill_skill_type").val(item.id)
+                    setSkill(item.name, item.id)
                     return item.name;
                 }
             })
@@ -44,12 +71,12 @@ function requestsNew() {
 function usersShow() {
 
     function init() {
-
+        console.log("init")
         $('.form_time')
             .datetimepicker({
                 format: 'LT',
                 stepping: 30
-            })
+            });
         $('.form_time input').on("blur", function (event) {
             var el = $(event.target);
             var hourId = el.attr('hour-id')
@@ -100,6 +127,7 @@ function ready() {
     skillsNew();
     requestsNew();
     usersShow();
+    console.log("ready")
 }
 
 $(document).on('page:change', ready)
