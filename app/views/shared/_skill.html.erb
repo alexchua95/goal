@@ -7,7 +7,7 @@
           <h3><%= skill.skill_type.name.titleize %></h3>
           <p><%= link_to skill.user.name, user_path(skill.user) %></p>
           <p><%= skill.level_name %></p>
-          <p>$<%= skill.rate %> per hour</p>
+          <p>$<%= skill.rate %>/hour</p>
         </div>
         <div class="col-lg-6">
           <%= link_to 'Request Session', new_skill_request_path(skill_id: skill.id), class: 'btn btn-success pull-right' %>
