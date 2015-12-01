@@ -1,12 +1,6 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <%= f.input :email, autofocus: true %>
-    <%= f.input :password, autocomplete: 'off' %>
-    <% if devise_mapping.rememberable? -%>
-        <%= f.input :remember_me, as: :boolean, inline_label: true %>
-    <% end -%>
-    <%= f.button :submit, 'Login' %>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="text-center" style="height:80vh;">
+  <div class="vertical-align">
+    <h1>Login to Start Learning or Teaching</h1>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

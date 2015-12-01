@@ -272,6 +272,10 @@ img.skill-user-image {
   display: inline-block;
 }
 
+.vertical-align {
+  @include vertical-align();
+}
+
 .slick-prev {
   color: red;
 }

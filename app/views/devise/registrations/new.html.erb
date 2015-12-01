@@ -1,12 +1,6 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :email, autofocus: true %>
-    <%= f.input :password, autocomplete: 'off', hint: @minimum_password_length ? "#{@minimum_password_length} characters minimum" : nil %>
-    <%= f.input :password_confirmation, autocomplete: 'off' %>
-    <%= f.button :submit, 'Sign Up' %>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="text-center" style="height:80vh;">
+  <div class="vertical-align">
+    <h1>Sign Up to Start Learning or Teaching</h1>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
