@@ -1,0 +1,42 @@
+<div class="skill-types-carousel">
+  <% skill_types.each do |skill_type| %>
+      <div>
+        <a href="#" class="skill-types-select" skill-type-id="<%= skill_type.id %>" skill-type-name="<%= skill_type.name %>">
+          <div class="skill-type-wrapper">
+            <%= image_tag "skill_types/#{skill_type.name}.jpg" %>
+            <div><%= skill_type.name %></div>
+          </div>
+        </a>
+      </div>
+  <% end %>
+</div>
+<%= simple_form_for(skill) do |f| %>
+    <%= f.input :skill_type_name, input_html: { placeholder: 'What is your skill?', autocomplete: :off }, label: false, hint: '' %>
+    <%= f.input :skill_type_id, as: :hidden %>
+    <div class="row">
+      <%= f.collection_radio_buttons(:level, Skill.level_tuples, :last, :first, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-4 level-select') do |b| %>
+          <% b.label do |l| %>
+              <%= b.radio_button %>
+              <div>
+                <div>
+                  <%= b.text %>
+                </div>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <%= f.input :rate, as: :price, label: false, input_html: { placeholder: 'Hourly Rate' }, hint: '' %>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <%= f.button :submit, skill.new_record? ? 'Done' : 'Save', class: 'btn btn-lg btn-success pull-right' %>
+        <% if not skill.new_record? %>
+            <%= link_to 'Remove', skill, method: :delete, class: 'btn btn-lg btn-danger delete-hour pull-right' %>
+        <% end %>
+      </div>
+    </div>
+<% end %>
