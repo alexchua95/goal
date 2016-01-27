@@ -61,6 +61,42 @@
   margin-top: -20px;
 }
 
+div.square-select {
+
+  label {
+    width: 100%;
+  }
+
+  img {
+    margin: auto;
+  }
+
+  input {
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+  }
+  input + div {
+    cursor:pointer;
+    border-radius: 10px;
+    border:1px solid #DADADA;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    display: table;
+    div {
+      width: 100%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    padding: 20px;
+  }
+
+  input:checked + div { /* (RADIO CHECKED) IMAGE STYLES */
+    background-color: rgba(255, 255, 255, 0.5);
+
+  }
+}
+
 div.level-select {
 
   label {

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :requests, controller: 'skills/requests'
   end
 
+  resources :landings
+
   resources :users do
     resources :hours, controller: 'users/hours'
     resources :locations, controller: 'users/locations'
