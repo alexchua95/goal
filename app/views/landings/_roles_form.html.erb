@@ -1,16 +1,18 @@
 <span class="roles_form">
-<%= simple_form_for landing, remote: true do |f| %>
-    <%= f.collection_check_boxes(:roles, Landing.roles, :downcase, :capitalize, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-6 square-select') do |b| %>
-        <% b.label do |l| %>
-            <%= b.check_box %>
-              <div>
+  <div class="row text-center">
+    <%= simple_form_for landing, remote: true do |f| %>
+        <%= f.collection_check_boxes(:roles, Landing.roles, :downcase, :capitalize, boolean_style: :inline, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-6 col-md-12 col-sm-12 square-select') do |b| %>
+            <%= b.label for: nil do %>
+                <%= b.check_box %>
                 <div>
-                  <%= image_tag "roles/#{b.text.downcase}.png" %>
-                  <h3><%= b.text %></h3>
+                  <div>
+                    <%= image_tag "roles/#{b.text.downcase}.png" %>
+                    <h3><%= b.text %></h3>
+                  </div>
                 </div>
-              </div>
+            <% end %>
         <% end %>
+        <%= f.button :submit, 'Next', class: 'btn btn-lg btn-success full-width' %>
     <% end %>
-      <%= f.button :submit, 'Next', class: 'btn btn-lg btn-success full-width' %>
-<% end %>
+  </div>
 </span>
