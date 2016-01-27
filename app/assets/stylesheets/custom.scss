@@ -7,7 +7,8 @@
 }
 
 .welcome-carousel {
-  height:500px;
+  height:100vh;
+  margin-top: -$navbar-height;
 
   .slick-slide {
     height: 100%;
@@ -23,12 +24,16 @@
     &.welcome-carousel-slide-2 {
       background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.80)), image-url('welcome-2') no-repeat center center;
     }
-    div {
-      width: 100%;
+    div.content {
       text-align: center;
       @include vertical-align();
-      margin: 0;
+      margin: auto;
       color: white;
+      max-width: 480px;
+    }
+
+    .landing_email {
+      margin-top: 36px;
     }
     h1 {
       font-weight: 900;
