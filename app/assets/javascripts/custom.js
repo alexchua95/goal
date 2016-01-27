@@ -1,8 +1,11 @@
 function welcomeIndex() {
-    $('.welcome-carousel').slick({
-        dots: true,
-        arrows: false
-    });
+    function init() {
+        $('.welcome-carousel').slick({
+            dots: true,
+            arrows: false
+        });
+    }
+    init()
 }
 
 function skillsNew() {

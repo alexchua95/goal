@@ -7,7 +7,8 @@
 }
 
 .welcome-carousel {
-  height:500px;
+  height:100vh;
+  margin-top: -$navbar-height;
 
   .slick-slide {
     height: 100%;
@@ -23,12 +24,17 @@
     &.welcome-carousel-slide-2 {
       background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.80)), image-url('welcome-2') no-repeat center center;
     }
-    div {
-      width: 100%;
+    div.content {
       text-align: center;
       @include vertical-align();
-      margin: 0;
+      margin: auto;
       color: white;
+      max-width: 480px;
+      padding: 20px;
+    }
+
+    .landing_email {
+      margin-top: 36px;
     }
     h1 {
       font-weight: 900;
@@ -54,6 +60,45 @@
 
 .container-fluid-top {
   margin-top: -20px;
+}
+
+div.square-select {
+
+  label {
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    margin: auto;
+  }
+
+  input {
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+  }
+  input + div {
+    cursor:pointer;
+    z-index: 999;
+    position: relative;
+    border-radius: 10px;
+    border:1px solid #DADADA;
+    width: 100%;
+    text-align: center;
+    display: table;
+    div {
+      width: 100%;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  input:checked + div { /* (RADIO CHECKED) IMAGE STYLES */
+    background-color: rgba(255, 255, 255, 0.5);
+
+  }
 }
 
 div.level-select {

@@ -1,0 +1,5 @@
+$('.welcome-carousel').slick('slickNext');
+console.log("<%= @landing %>")
+$( ".email_form" ).replaceWith( '<%= escape_javascript(render 'email_form', landing: @landing) %>' );
+$( ".roles_form" ).replaceWith( '<%= escape_javascript(render 'roles_form', landing: @landing) %>' );
+$( ".skills_form" ).replaceWith( '<%= escape_javascript(render 'skills_form', landing: @landing) %>');
