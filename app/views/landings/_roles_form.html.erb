@@ -1,0 +1,16 @@
+<span class="roles_form">
+<%= simple_form_for landing, remote: true do |f| %>
+    <%= f.collection_check_boxes(:roles, Landing.roles, :downcase, :capitalize, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-6 square-select') do |b| %>
+        <% b.label do |l| %>
+            <%= b.check_box %>
+              <div>
+                <div>
+                  <%= image_tag "roles/#{b.text.downcase}.png" %>
+                  <h3><%= b.text %></h3>
+                </div>
+              </div>
+        <% end %>
+    <% end %>
+      <%= f.button :submit, 'Next', class: 'btn btn-lg btn-success full-width' %>
+<% end %>
+</span>

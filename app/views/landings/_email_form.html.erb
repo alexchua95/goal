@@ -1,0 +1,5 @@
+<span class="email_form">
+  <%= simple_form_for landing, remote: true do |f| %>
+      <%= f.input :email, as: :landing_email, label: false, input_html: { placeholder: 'Type your email...', type: :email} %>
+  <% end %>
+</span>

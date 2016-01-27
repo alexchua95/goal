@@ -1,0 +1,16 @@
+<span class="skills_form">
+<%= simple_form_for landing, remote: true do |f| %>
+    <%= f.collection_check_boxes(:skills, Landing.skills, :downcase, :capitalize, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-4 square-select') do |b| %>
+        <% b.label do |l| %>
+            <%= b.check_box %>
+              <div>
+                <div>
+                  <%= image_tag "landing_skills/#{b.text.downcase}.png" %>
+                  <h5><%= b.text %></h5>
+                </div>
+              </div>
+        <% end %>
+    <% end %>
+      <%= f.button :submit, 'Done', class: 'btn btn-lg btn-success full-width' %>
+<% end %>
+</span>

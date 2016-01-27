@@ -3,50 +3,22 @@
     <div class="content">
       <h1>Pash</h1>
       <h3>Go out and learn</h3>
-      <%= simple_form_for Landing.new, remote: true, html: { 'data-type': :json } do |f| %>
-          <%= f.input :email, as: :landing_email, label: false, input_html: { placeholder: 'Type your email...'} %>
-      <% end %>
+      <%= render 'landings/email_form', landing: Landing.new %>
     </div>
   </div>
   <div class="welcome-carousel-slide-1">
     <div class="content">
-      <h1>What do you associate with?</h1>
+      <h2>What do you associate with?</h2>
       <div class="row text-center">
-        <%= simple_form_for Landing.new, remote: true, html: { 'data-type': :json } do |f| %>
-            <%= f.collection_check_boxes(:roles, Landing.roles, :downcase, :capitalize, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-6 square-select') do |b| %>
-                <% b.label do |l| %>
-                    <%= b.check_box %>
-                    <div>
-                      <div>
-                        <%= image_tag "roles/#{b.text.downcase}.png" %>
-                        <h3><%= b.text %></h3>
-                      </div>
-                    </div>
-                <% end %>
-            <% end %>
-            <%= f.button :submit, 'Next', class: 'btn btn-lg btn-success full-width' %>
-        <% end %>
+        <%= render 'landings/roles_form', landing: Landing.new %>
       </div>
     </div>
   </div>
   <div class="welcome-carousel-slide-2">
     <div class="content">
-      <h1>What skills interest you?</h1>
+      <h2>What skills interest you?</h2>
       <div class="row text-center">
-        <%= simple_form_for Landing.new, remote: true, html: { 'data-type': :json } do |f| %>
-            <%= f.collection_check_boxes(:skills, Landing.skills, :downcase, :capitalize, item_wrapper_tag: :div, item_wrapper_class: 'col-lg-4 square-select') do |b| %>
-                <% b.label do |l| %>
-                    <%= b.check_box %>
-                    <div>
-                      <div>
-                        <%= image_tag "landing_skills/#{b.text.downcase}.png" %>
-                        <h5><%= b.text %></h5>
-                      </div>
-                    </div>
-                <% end %>
-            <% end %>
-            <%= f.button :submit, 'Done', class: 'btn btn-lg btn-success full-width' %>
-        <% end %>
+        <%= render 'landings/skills_form', landing: Landing.new %>
       </div>
     </div>
   </div>
@@ -170,3 +142,4 @@
     </div>
   </div>
 </div>
+

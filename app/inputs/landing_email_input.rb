@@ -12,7 +12,8 @@ class LandingEmailInput < SimpleForm::Inputs::Base
 
   def span_sign_up
     template.content_tag(:span, class: 'input-group-btn') do
-      template.concat '<button class="btn btn-success btn-lg" type="button">Sign Up</button>'.html_safe
+      template.concat '<input type="submit" name="commit" value="Sign Up" class="btn btn-default btn btn-lg btn-success">'.html_safe
+
     end
   end
 
