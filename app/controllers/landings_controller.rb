@@ -4,7 +4,7 @@ class LandingsController < ApplicationController
     @landing = Landing.new(landing_params)
     respond_to do |format|
       if @landing.save
-        format.js { }
+        format.js { render layout: false }
       end
     end
   end
@@ -14,7 +14,7 @@ class LandingsController < ApplicationController
     @landing.update(landing_params)
     respond_to do |format|
       if @landing.save
-        format.js { }
+        format.js { render layout: false }
       end
     end
   end

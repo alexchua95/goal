@@ -30,6 +30,7 @@
       margin: auto;
       color: white;
       max-width: 480px;
+      padding: 20px;
     }
 
     .landing_email {
@@ -64,6 +65,7 @@
 div.square-select {
 
   label {
+    height: 100%;
     width: 100%;
   }
 
@@ -77,9 +79,10 @@ div.square-select {
   }
   input + div {
     cursor:pointer;
+    z-index: 999;
+    position: relative;
     border-radius: 10px;
     border:1px solid #DADADA;
-    height: 100px;
     width: 100%;
     text-align: center;
     display: table;
@@ -88,7 +91,8 @@ div.square-select {
       display: table-cell;
       vertical-align: middle;
     }
-    padding: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
   }
 
   input:checked + div { /* (RADIO CHECKED) IMAGE STYLES */
