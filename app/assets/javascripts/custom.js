@@ -2,7 +2,7 @@ function welcomeIndex() {
     function init() {
         $('.welcome-carousel').slick({
             dots: true,
-            arrows: false,  
+            arrows: false,
             infinite: false
         });
     }

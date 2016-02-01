@@ -7,3 +7,7 @@ $('.landing_other_skills input').tagsinput({
         return 'label label-success'
     }
 });
+var currentSlide = $('.welcome-carousel').slick('slickCurrentSlide');
+if (currentSlide == 2) {
+    $('.landing-message').fadeIn();
+}
