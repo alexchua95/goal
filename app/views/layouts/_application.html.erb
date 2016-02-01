@@ -50,10 +50,10 @@
     <%= link_to 'Pash', root_path, class: 'navbar-brand' %>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
-        <li class="<%= 'active' if current_page?(skills_path) %>">
-          <%= link_to 'Explore', skills_path %>
-        </li>
         <% if current_user %>
+            <li class="<%= 'active' if current_page?(skills_path) %>">
+              <%= link_to 'Explore', skills_path %>
+            </li>
             <li class="<%= 'active' if current_page?(requests_path) %>">
               <%= link_to 'Requests', requests_path %>
             </li>
