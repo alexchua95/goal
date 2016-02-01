@@ -1,23 +1,13 @@
 <span class="roles_form">
   <div class="row text-center">
-    <%= simple_form_for landing, remote: true do |f| %>
-        <%= f.collection_check_boxes(:roles, Landing.roles, :downcase, :capitalize, boolean_style: :inline, item_wrapper_tag: :div, item_wrapper_class: 'col-sm-6 col-xs-6 col-md-6 col-lg-6 square-select') do |b| %>
-            <%= b.label for: nil do %>
-                <%= b.check_box %>
-                <div>
-                  <div class="visible-lg visible-md">
-                    <%= image_tag "roles/#{b.text.downcase}.png" %>
-                    <h3><%= b.text %></h3>
-                  </div>
-                  <div class="visible-sm visible-xs">
-                    <%= image_tag "roles_small/#{b.text.downcase}.png" %>
-                    <h4><%= b.text %></h4>
-                  </div>
-                </div>
-            <% end %>
-        <% end %>
-        <div class="col-lg-12">
-          <%= f.button :submit, 'Next', class: 'btn btn-lg btn-success full-width' %>
+    <% Landing.roles.each do |role| %>
+        <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+          <%= link_to landings_path(landing,  landing: { role: role }), method: :post, remote: true, class:'landing-select' do %>
+              <%= image_tag "roles/#{role.downcase}.png", class: 'visible-lg visible-md' %>
+              <%= image_tag "roles_small/#{role.downcase}.png", class: 'visible-xs visible-s' %>
+              <h5 class='visible-lg visible-md'><%= role.capitalize %></h5>
+              <h6 class='visible-xs visible-s'><%= role.capitalize %></h6>
+          <% end %>
         </div>
     <% end %>
   </div>

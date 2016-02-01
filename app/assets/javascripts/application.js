@@ -19,4 +19,5 @@
 //= require moment
 //= require eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
 //= require bootstrap3-typeahead/bootstrap3-typeahead.min.js
+//= require bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js
 //= require custom

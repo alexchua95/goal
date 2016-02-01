@@ -4,20 +4,24 @@
           <%= f.collection_check_boxes(:skills, Landing.skills, :downcase, :capitalize, boolean_style: :inline, item_wrapper_tag: :div, item_wrapper_class: 'square-select col-xs-4 col-sm-4 col-md-4 col-lg-4') do |b| %>
               <%= b.label for: nil do %>
                   <%= b.check_box %>
+                  <% image_name = b.text.downcase.gsub(' ','_') %>
                   <div>
                     <div class="visible-lg visible-md">
-                      <%= image_tag "landing_skills/#{b.text.downcase}.png" %>
+                      <%= image_tag "landing_skills/#{image_name}.png" %>
                       <h5><%= b.text %></h5>
                     </div>
                     <div class="visible-sm visible-xs">
-                      <%= image_tag "landing_skills_small/#{b.text.downcase}.png" %>
+                      <%= image_tag "landing_skills_small/#{image_name}.png" %>
                       <h6><%= b.text %></h6>
                     </div>
                   </div>
               <% end %>
           <% end %>
           <div class="col-lg-12">
-            <%= f.button :submit, 'Done', class: 'btn btn-lg btn-success full-width' %>
+            <%= f.input :other_skills, label: false, input_html: { placeholder: 'Add any other skills...', class: 'full-width' } %>
+          </div>
+          <div class="col-lg-12">
+            <%= f.button :submit, 'Next', class: 'btn btn-lg btn-success full-width' %>
           </div>
       <% end %>
     </div>
