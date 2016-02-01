@@ -1,21 +1,22 @@
 <div class="welcome-carousel">
   <div class="welcome-carousel-slide-0">
     <div class="content">
-      <h1>Pash</h1>
-      <h3>Go out and learn</h3>
-      <%= render 'landings/email_form', landing: Landing.new %>
+      <h3>What are you associated with?</h3>
+      <%= render 'landings/roles_form', landing: Landing.new %>
     </div>
   </div>
   <div class="welcome-carousel-slide-1">
     <div class="content">
-      <h3>What do you associate with?</h3>
-      <%= render 'landings/roles_form', landing: Landing.new %>
+      <h3>What skills interest you?</h3>
+      <%= render 'landings/skills_form', landing: Landing.new %>
     </div>
   </div>
   <div class="welcome-carousel-slide-2">
     <div class="content">
-      <h3>What skills interest you?</h3>
-      <%= render 'landings/skills_form', landing: Landing.new %>
+      <h1>Pash</h1>
+      <h3>People Teaching People</h3>
+      <%= render 'landings/email_form', landing: Landing.new %>
+      <h5 class="landing-message">Thank you! We will contact you when our service is ready.</h5>
     </div>
   </div>
 </div>

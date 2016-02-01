@@ -2,9 +2,17 @@ function welcomeIndex() {
     function init() {
         $('.welcome-carousel').slick({
             dots: true,
-            arrows: false
+            arrows: false,
+            infinite: false
         });
     }
+
+    $('.landing_other_skills input').tagsinput({
+        tagClass: function(item) {
+            return 'label label-success'
+        }
+    });
+
     init()
 }
 

@@ -20,7 +20,10 @@ class LandingsController < ApplicationController
   end
 
   def landing_params
-    params.require(:landing).permit(:email, roles: [], skills: [])
+    if params[:landing][:other_skills]
+      params[:landing][:other_skills] = params[:landing][:other_skills].split(',')
+    end
+    params.require(:landing).permit(:email, :role, other_skills: [], skills: [])
   end
 
 end

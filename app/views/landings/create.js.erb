@@ -1,5 +1,13 @@
 $('.welcome-carousel').slick('slickNext');
-console.log("<%= @landing %>")
 $( ".email_form" ).replaceWith( '<%= escape_javascript(render 'email_form', landing: @landing) %>' );
 $( ".roles_form" ).replaceWith( '<%= escape_javascript(render 'roles_form', landing: @landing) %>' );
 $( ".skills_form" ).replaceWith( '<%= escape_javascript(render 'skills_form', landing: @landing) %>');
+$('.landing_other_skills input').tagsinput({
+    tagClass: function(item) {
+        return 'label label-success'
+    }
+});
+var currentSlide = $('.welcome-carousel').slick('slickCurrentSlide');
+if (currentSlide == 2) {
+    $('.landing-message').fadeIn();
+}
