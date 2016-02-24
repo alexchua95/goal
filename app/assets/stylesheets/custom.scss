@@ -377,3 +377,34 @@ img.skill-user-image {
 .landing-message {
   display: none;
 }
+
+.image-background {
+  height: auto;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  opacity: 0.5;
+}
+
+.black-background {
+  height:auto;
+  width:auto;
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: $grid-gutter-width/2;
+  right: $grid-gutter-width/2;
+  margin:auto;
+  background-color: #000000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-block {
+  margin-top: $grid-gutter-width/2;
+  color: #FFFFFF;
+}
