@@ -170,11 +170,13 @@ function usersShow() {
         });
 
         var map;
+
         if (document.getElementById('map')) {
             map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: -34.397, lng: 150.644},
                 zoom: 15
             });
+            map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
         }
 
         var marker = new google.maps.Marker({

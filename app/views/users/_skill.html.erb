@@ -1,14 +1,15 @@
-<div class="row table-vertical-center">
-  <div class="col-lg-6">
-    <h3><%= skill.skill_type.name.titleize %></h3>
-    <p class="h4"><%= skill.level_name %></p>
-    <p class="h4">$<%= skill.rate %>/hour</p>
-  </div>
-  <div class="col-lg-6">
-    <% if skill.user == current_user %>
-        <%= link_to 'Edit Skill', edit_skill_path(skill.id), class: 'btn btn-success pull-right' %>
-    <% else %>
-        <%= link_to 'Request Session', new_skill_request_path(skill_id: skill.id), class: 'btn btn-success pull-right' %>
-    <% end %>
-  </div>
+<div class="black-background">
+  <%= image_tag "skill_types/#{skill.skill_type.name}.jpg", class: :'image-background' %>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <h3><%= skill.skill_type.name.titleize %></h3>
+  <p class="h4"><%= skill.level_name %></p>
+  <p class="h4">$<%= skill.rate %>/hour</p>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+  <% if skill.user == current_user %>
+      <%= link_to 'Edit Skill', edit_skill_path(skill.id), class: 'btn btn-success pull-right' %>
+  <% else %>
+      <%= link_to 'Request Session', new_skill_request_path(skill_id: skill.id), class: 'btn btn-success pull-right' %>
+  <% end %>
 </div>

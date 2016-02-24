@@ -3,7 +3,6 @@
     <div class="row">
       <div class="col-lg-6">
         <%= render 'users/details.html.erb', user: user %>
-
       </div>
       <div class="col-lg-6">
         <%= render 'shared/availability.html.erb', user: user %>
@@ -11,35 +10,29 @@
     </div>
   </div>
   <div class="col-lg-12">
-    <table class="table table-striped">
-      <h3>Skills</h3>
-      <tbody>
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Skills</h3>
+      </div>
       <% user.skills.each do |skill|%>
-          <tr>
-            <td>
-              <%= render 'users/skill.html.erb', skill: skill %>
-            </td>
-          </tr>
+          <div class="col-lg-6 table-vertical-center skill-block">
+            <%= render 'users/skill.html.erb', skill: skill %>
+          </div>
       <% end %>
-      <% if user == current_user %>
-          <tr>
-            <td>
-              <%= render 'users/new_skill.html.erb' %>
-            </td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
+      <div class="col-lg-6 table-vertical-center skill-block">
+        <%= render 'users/new_skill.html.erb' %>
+      </div>
+    </div>
   </div>
   <% if user == current_user %>
       <div class="col-lg-12 col-md-12 hours">
-        <h3>Your Availability</h3>
+        <h3>Availability</h3>
         <% (user.hours + [Hour.new]).each do |hour| %>
             <%= render 'shared/hour_form.html.erb', hour: hour %>
         <% end %>
       </div>
       <div class="col-lg-12">
-        <h3>Your Location</h3>
+        <h3>Location</h3>
         <%= render 'users/location_form.html.erb', location: user.location ? user.location : Location.new %>
       </div>
   <% end %>
